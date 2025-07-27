@@ -1,0 +1,18 @@
+<div class="user-detail" *ngIf="user; else notFound">
+  <mat-card>
+    <img [src]="user.avatar" alt="User Avatar" />
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>User ID: {{ user.id }}</p>
+    <button mat-raised-button color="accent" (click)="goBack()">Back</button>
+  </mat-card>
+</div>
+
+<ng-template #notFound>
+  <div class="not-found">
+    <mat-card>
+      <h2>User Not Found</h2>
+      <button mat-raised-button color="primary" (click)="goBack()">Back to List</button>
+    </mat-card>
+  </div>
+</ng-template>
