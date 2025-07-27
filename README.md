@@ -1,27 +1,71 @@
-# AngularQuiz
+# Angular Quiz App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+A simple Angular app that fetches users from the Reqres API and displays them in a paginated list with detail views.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ✅ Features
 
-## Code scaffolding
+- Paginated list of users (6 per page)
+- Clickable user cards (with avatar, name, ID)
+- User detail page with full information
+- Instant search by user ID
+- "User Not Found" fallback handling
+- Caching to avoid repeated API calls
+- Global loading bar for all HTTP requests
+- Responsive and styled with Angular Material
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🔐 API Key
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This app uses [https://reqres.in](https://reqres.in) which now requires an API key.
 
-## Running unit tests
+### How to get one:
+1. Go to [https://reqres.in/signup](https://reqres.in/signup)
+2. Register to get a **free API key** (e.g. `reqres-free-v1`)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### How to use:
+Open `src/app/services/user.service.ts`  
+Replace the key here:
 
-## Running end-to-end tests
+```ts
+private readonly API_KEY = 'reqres-free-v1'; 
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+This will be used in all requests as:
 
-## Further help
+```ts
+headers: {
+  'x-api-key': this.API_KEY
+}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 🚀 How to Run the App
+
+1. Clone the repo or download the ZIP:
+   ```bash
+   git clone https://github.com/your-username/angular-quiz.git
+   cd angular-quiz
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   ng serve
+   ```
+
+4. Open in your browser:
+   ```
+   http://localhost:4200/
+   ```
+
+---
+
+
